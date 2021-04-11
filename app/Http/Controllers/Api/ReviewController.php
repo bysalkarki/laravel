@@ -5,22 +5,20 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\ReviewStoreRequest;
 use App\Http\Requests\Api\ReviewUpdateRequest;
-use App\Http\Resources\ReviewResource;
-use App\Models\Product;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-
     /**
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Product $product)
+    public function index(Request $request)
     {
+        $reviews = Review::all();
 
-        return ReviewResource::collection($product->reviews);
+        return view('review.index', compact('reviews'));
     }
 
     /**

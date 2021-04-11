@@ -22,13 +22,12 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $money = $this->faker->numberBetween(0, 10000);
         return [
             'title' => $this->faker->sentence(4),
             'detail' => $this->faker->text,
-            'price' => $money,
-            'discount' => $money - rand(0,$money),
-            'stock' => $this->faker->numberBetween(0, 20),
+            'price' => $this->faker->numberBetween(-10000, 10000),
+            'discount' => $this->faker->numberBetween(-10000, 10000),
+            'stock' => $this->faker->numberBetween(-10000, 10000),
         ];
     }
 }

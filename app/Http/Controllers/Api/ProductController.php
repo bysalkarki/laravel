@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\ProductStoreRequest;
 use App\Http\Requests\Api\ProductUpdateRequest;
-use App\Http\Resources\product\ProductCollection;
-use App\Http\Resources\product\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -18,10 +16,9 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        $products = Product::all();
 
-       return  ProductCollection::collection(Product::all());
-
-
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -53,7 +50,7 @@ class ProductController extends Controller
      */
     public function show(Request $request, Product $product)
     {
-        return new ProductResource($product);
+        return view('product.show', compact('product'));
     }
 
     /**

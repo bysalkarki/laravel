@@ -26,8 +26,8 @@ class ReviewFactory extends Factory
         return [
             'Customer' => $this->faker->text,
             'review' => $this->faker->text,
-            'star' => $this->faker->numberBetween(0,5),
-            'product_id' => Product::find(rand(1,5)),
+            'star' => $this->faker->numberBetween(-10000, 10000),
+            'product_id' => Product::factory(),
         ];
     }
 }

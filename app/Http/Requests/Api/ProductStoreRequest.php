@@ -31,4 +31,13 @@ class ProductStoreRequest extends FormRequest
             'stock' => ['required', 'integer'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'A title is required',
+            'detail.required' => 'A message is required',
+            'detail.string' => 'The detail should only consists of string',
+        ];
+    }
 }

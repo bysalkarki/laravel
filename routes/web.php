@@ -17,3 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Route::resource('product', App\Http\Controllers\Api\ProductController::class);
+
+Route::resource('review', App\Http\Controllers\Api\ReviewController::class);
