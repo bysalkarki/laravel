@@ -1,0 +1,27 @@
+models:
+  Product:
+    title: text
+    detail: longText
+    price: integer
+    discount: integer
+    stock: integer
+    softdeletes
+    relationships:
+      hasMany: Review
+
+  Review:
+    Customer: text
+    review: longText
+    star: integer
+    product_id: id foreign:products
+
+controllers:
+  Api/Product:
+    resource
+
+  Api/Review:
+    resource
+
+seeders: Product, Review
+
+
