@@ -15,6 +15,12 @@ models:
     star: integer
     product_id: id foreign:products
 
+  Image:
+    product_id: id foreign:products
+    name: string
+    relationships:
+      belongsTo: Product
+
 controllers:
   Api/Product:
     resource
